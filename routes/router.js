@@ -151,8 +151,8 @@ function authenticate(passport) {
                 });
             },
             function(user, done) {
-                let mailOptions = keys.addKeyValue(keys.resetMailOptions, 'to', user.email)
-                replaceEmail = mailOptions['text'].replace('<email>', user.email);
+                let mailOptions = keys.addKeyValue(keys.resetMailOptions, 'to', user.email);
+                let replaceEmail = mailOptions['text'].replace('<email>', user.email);
                 let disableMailSending = keys.disableMailSending;
                 
                 if(disableMailSending && disableMailSending == "no") {
